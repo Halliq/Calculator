@@ -1,0 +1,126 @@
+:root {
+    /* Colors */
+    --main-color:rgb(162, 31, 162);
+    --button-background-color: rgb(25, 22, 22);;
+    --main-color-black: rgb(39, 37, 37);
+    --screen-gray: rgb(38, 34, 34);
+    --screen-white: rgb(206, 203, 203);
+
+    /* borders */
+    --top-border:15px;
+}
+
+
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:100dvh;
+    background-color:Black;
+    color:white;
+}
+body::after{
+    content:"";
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;/* 
+    background: url(pictures/programming-text.jpg); */
+}
+
+
+/* Calculator */
+#calculator {
+    display:grid;
+    height: 17.5rem;
+    width: 14rem;
+    margin: 0;
+    background-color: var(--main-color-black);
+    border-radius: var(--top-border);
+    grid-template-rows: 10% 15% 15% 100%;
+}
+.mode {
+    border-radius:var(--top-border) var(--top-border) 0 0 ;
+}
+.mode-slider {
+    position: relative;
+    bottom:-0.75rem;
+    left:1rem;
+    width: 1.8rem;
+    height: 0.7rem;
+    background-color:white;
+    border-radius: 5px;
+}
+.knap {
+    background-color:var(--main-color);
+    height:1rem;
+    width:1rem;
+    border-radius: 50%;
+    position:relative;
+    top:-0.175rem;
+    left:-0.3rem;
+}
+.knap:hover {
+    cursor: pointer;
+    background-color: var(--screen-white);
+
+}
+
+.last-operation {
+    text-align-last: right;
+    line-height: 2.625rem ;
+    padding-right:.5rem;
+    border-bottom: 1px solid var(--screen-gray);
+}
+
+.screen {
+    line-height: 2.625rem ;
+    padding-right:.5rem;
+    text-align-last: right;
+}
+.result {
+    width: 100%;
+    height: 100%;
+    text-align: center;    
+}
+.buttons {
+    display:grid;
+    border-radius: 0 0 var(--top-border) var(--top-border);
+    grid-template-rows: repeat(5, 3.5rem); 
+    grid-template-columns: repeat(4, 3.5rem);
+    border-top: 1px solid var(--main-color);
+}
+.button {
+    text-align: center;
+    line-height: 3.5rem;
+    border-radius: 2px;
+    border: 1px solid black;
+    color: rgb(186, 184, 184);
+    background-color: var(--button-background-color);
+}
+.button:hover {
+    cursor: pointer;
+    background-color: var(--screen-white);
+    color:var(--main-color-black);
+}
+
+/* Operation buttons */
+.dot {
+    border-radius: 0 0 0 var(--top-border);
+}
+.backslash , .subtraction, .addition, .equal {
+    color:black;
+    background-color: var(--main-color);
+    
+}
+.equal {
+    grid-column-start: 4;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    line-height: 7rem;  
+    border-radius: 0 0 var(--top-border) 0;
+}
